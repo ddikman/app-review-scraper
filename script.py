@@ -36,11 +36,11 @@ def download(app_id, lang, country, appstore_app_id, appstore_name):
       print('google play reviews saved to: ', reviews_path)
 
   appstore_app = AppStore(country=country, app_name=appstore_name, app_id = appstore_app_id)
-  appstore_reviews = appstore_app.review(how_many=1000)
+  appstore_app.review(how_many=1000)
 
   reviews_path = f'reviews_appstore_{lang}_{country}.json'
   with open(reviews_path, 'w') as outfile:
-      json.dump(appstore_reviews, outfile, default=datetime_serializer)
+      json.dump(appstore_app.reviews, outfile, default=datetime_serializer)
       print('appstore reviews saved to: ', reviews_path)
 
   print('all done')

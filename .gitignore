@@ -1,0 +1,5 @@
+# ignore output files
+*.json
+
+# ignore temp settings
+.defaults
